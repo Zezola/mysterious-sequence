@@ -1,0 +1,27 @@
+.guesses {
+    width: 80vw;
+    height: 50vh;
+    margin: auto;
+    
+}
+.guess-input {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
+    background-color: aliceblue;
+    padding-left: 350px;
+}
+
+#row-2 {
+    display: none;
+}
+
+#row-3 {
+    display: none;
+}
+
+#row-4 {
+    display: none;
+}
+
+
+
