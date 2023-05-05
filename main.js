@@ -1,10 +1,12 @@
 // TO-DO: This only works for the first button. If i click on the others nothing happens.
 
-// Click event-handler
-document.getElementById('btn').onclick = () => {
+let buttons = document.getElementsByTagName('button')
+let last_button = buttons.item(buttons.length-1)
+
+last_button.onclick = () => {
     let new_div = render_new_div()
     new_div.className = "guess-input"
-    document.getElementsByClassName("guesses").item(0).appendChild(new_div)
+    document.getElementsByClassName("guesses").item(0).appendChild(new_div)    
 }
 
 const render_new_div = () => {
