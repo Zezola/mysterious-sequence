@@ -1,4 +1,4 @@
-// TO-DO: If i click in one of the buttons, the next row should have the display property changed to: grid 
+// TO-DO: This only works for the first button. If i click on the others nothing happens.
 
 // Click event-handler
 document.getElementById('btn').onclick = () => {
