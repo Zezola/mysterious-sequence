@@ -17,6 +17,5 @@ const render_new_div = () => {
     new_div.appendChild(document.createElement('input'))
     new_div.appendChild(document.createElement('button'))
     new_div.lastChild.id = 'btn'
-    console.log(new_div.lastChild)
     return new_div    
 }
