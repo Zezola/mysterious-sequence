@@ -1,16 +1,17 @@
 
-var random_sequence = []
-for(let i = 0; i < 5; i++) {
-    mysterious_number = Math.floor((Math.random() * 5)+1)
-    console.log(mysterious_number in random_sequence)
-    if (mysterious_number in random_sequence) {
-        mysterious_number = Math.floor((Math.random() * 5)+1)
-    } else {
-        random_sequence.push(mysterious_number)
-    }
-    
+document.getElementById('btn').addEventListener('click', () => {
+    let new_div = render_new_div()
+    document.getElementsByClassName('guesses').item(0).appendChild(new_div)
+})
+
+const render_new_div = () => {
+    let new_div = document.createElement('div')
+    // Generate the five inputs and the button
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.className = 'guess-input'
+    return new_div    
 }
-console.log(random_sequence)
-console.log("------------------------")
-let n = [1,3,5,2]
-console.log(1 in n)
