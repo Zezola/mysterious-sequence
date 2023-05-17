@@ -9,8 +9,8 @@ for (let i = 0; i < buttons.length; i++) {
     }
 }
 
-function get_row_id(button_id) {
-    return "row-"+button_id
+function get_row_id(button_id_serial) {
+    return "row-"+button_id_serial
 }
 
 function populate_input_values_array(row_id) {
