@@ -14,6 +14,8 @@ function getRowId(buttonId) {
     return "row-"+buttonId
 }
 
+console.log("JUST A TEST")
+
 function populateInputValuesIntoArray(rowId) {
     const inputValues = []
     const rowInputs = document.getElementById(rowId).children
