@@ -26,25 +26,6 @@ function populateInputValuesIntoArray(rowId) {
     return inputValues
 }
 
-function getUserInputPerRow(rowId) {
-    let rowElemetsCollection
-    switch(rowId) {
-        case "row-1": 
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        case "row-2":
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        case "row-3":
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        case "row-4":
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        default:
-            return []
-    }
-}
 
 function compareUserSequenceIntoResultsArray(userInputSequence) {
     console.log(userInputSequence)
