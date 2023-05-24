@@ -1,51 +1,30 @@
-var buttons = document.getElementsByTagName("button")
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = function (e) {
-        alert(this.id[this.id.length-1])
-        document.getElementById(this.id).disabled = true
-        const buttonClickedId = this.id[this.id.length-1]
-        let rowId = getRowId(buttonClickedId)
-        let userInputArray = getUserInputPerRow(rowId)
-        compareUserSequence(userInputArray)
-    }
+
+document.getElementById('btn').addEventListener('click', () => {
+    let counter = 2
+    let user_guesses = []
+    let guess = get_user_sequence()
+    user_guesses.push(guess)
+    console.log(user_guesses)
+    let new_div = render_new_div(counter)
+    console.log(new_div)
+    document.getElementById('guesses').appendChild(new_div)
+    counter++
+})
+
+const render_new_div = (counter) => {
+    const new_div_id = 'row-'+counter
+    let new_div = document.createElement('div')
+    // Generate the five inputs and the button
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.appendChild(document.createElement('input'))
+    new_div.className = 'guess-input'
+    new_div.id = new_div_id
+    return new_div    
 }
 
-function getRowId(buttonId) {
-    return "row-"+buttonId
-}
-
-console.log("JUST A TEST")
-
-function populateInputValuesIntoArray(rowId) {
-    const inputValues = []
-    const rowInputs = document.getElementById(rowId).children
-    for (let i = 0; i < rowInputs.length; i++) {
-        if (rowInputs.item(i).tagName === "INPUT") {
-            inputValues.push(rowInputs.item(i).value)
-        }
-    }
-    return inputValues
-}
-
-function getUserInputPerRow(rowId) {
-    let rowElemetsCollection
-    switch(rowId) {
-        case "row-1": 
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        case "row-2":
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        case "row-3":
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        case "row-4":
-            rowElemetsCollection = populateInputValuesIntoArray(rowId)
-            return rowElemetsCollection
-        default:
-            return []
-    }
-}
 
 function compareUserSequence(userInputSequence) {
     console.log(userInputSequence)
