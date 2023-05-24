@@ -48,9 +48,16 @@ function getUserInputPerRow(rowId) {
 }
 
 function compareUserSequence(userInputSequence) {
+    console.log(userInputSequence)
     // at first lets just use a mock sequence 
-    const sequence = [1,2,3,4,5]
-    Array.from(userInputSequence).forEach((e,index)=> {
-        
+    var sequence = [1,2,3,4,5]
+    var elementIndex = 0
+    const comparedInputSequence = userInputSequence.map((element, index) => {
+        elementIndex = sequence.indexOf(Number(element))
+        if (index === elementIndex) {
+            return 0
+        }
+        return -1
     })
+    console.log(comparedInputSequence)
 }
