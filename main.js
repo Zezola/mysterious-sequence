@@ -14,6 +14,26 @@ function getRowId(buttonId) {
     return "row-"+buttonId
 }
 
+function getUserInputPerRow(rowId) {
+    let rowElemetsCollection
+    switch(rowId) {
+        case "row-1": 
+            rowElemetsCollection = populateInputValuesIntoArray(rowId)
+            return rowElemetsCollection
+        case "row-2":
+            rowElemetsCollection = populateInputValuesIntoArray(rowId)
+            return rowElemetsCollection
+        case "row-3":
+            rowElemetsCollection = populateInputValuesIntoArray(rowId)
+            return rowElemetsCollection
+        case "row-4":
+            rowElemetsCollection = populateInputValuesIntoArray(rowId)
+            return rowElemetsCollection
+        default:
+            return []
+    }
+}
+
 
 function populateInputValuesIntoArray(rowId) {
     const inputValues = []
