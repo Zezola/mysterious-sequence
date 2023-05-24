@@ -7,8 +7,26 @@ for (let i = 0; i < buttons.length; i++) {
         let rowId = getRowId(buttonClickedId)
         let userInputArray = getUserInputPerRow(rowId)
         let resultsArray = compareUserSequenceIntoResultsArray(userInputArray)
+        changeNumberColorBasedOnResultsArray(resultsArray, rowId)
     }
 }
+
+function changeNumberColorBasedOnResultsArray (resultsArray, rowId) {
+    const currentDiv = document.getElementById(rowId)
+    const inputsCollection = currentDiv.getElementsByTagName('input')
+    Array.from(inputsCollection).forEach((element, index) => {
+        if (resultsArray[index] === 0) {
+            element.style.background = "orange"
+        } 
+        if (resultsArray[index] === 1) {
+            element.style.background = "green"
+        }
+        if (resultsArray[index] === -1) {
+            element.style.background = "red"
+        }
+    })
+}
+
 
 function getRowId(buttonId) {
     return "row-"+buttonId
