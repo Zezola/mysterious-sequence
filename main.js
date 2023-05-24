@@ -6,7 +6,7 @@ for (let i = 0; i < buttons.length; i++) {
         const buttonClickedId = this.id[this.id.length-1]
         let rowId = getRowId(buttonClickedId)
         let userInputArray = getUserInputPerRow(rowId)
-        compareUserSequence(userInputArray)
+        let resultsArray = compareUserSequenceIntoResultsArray(userInputArray)
     }
 }
 
@@ -14,7 +14,6 @@ function getRowId(buttonId) {
     return "row-"+buttonId
 }
 
-console.log("JUST A TEST")
 
 function populateInputValuesIntoArray(rowId) {
     const inputValues = []
@@ -47,17 +46,19 @@ function getUserInputPerRow(rowId) {
     }
 }
 
-function compareUserSequence(userInputSequence) {
+function compareUserSequenceIntoResultsArray(userInputSequence) {
     console.log(userInputSequence)
     // at first lets just use a mock sequence 
     var sequence = [1,2,3,4,5]
     var elementIndex = 0
-    const comparedInputSequence = userInputSequence.map((element, index) => {
+    const resultsArray = userInputSequence.map((element, index) => {
         elementIndex = sequence.indexOf(Number(element))
         if (index === elementIndex) {
+            return 1
+        } else if (index !== elementIndex && elementIndex !== -1) {
             return 0
         }
         return -1
     })
-    console.log(comparedInputSequence)
+    return resultsArray
 }
