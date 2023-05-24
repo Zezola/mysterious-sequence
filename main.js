@@ -26,13 +26,17 @@ const render_new_div = (counter) => {
 }
 
 
-let get_user_sequence = () => {
-    /* TO-DO: Get the user sequence from 5 inputs */
-    // Clean the map first
-    let user_sequence_map = new Map()
-    let user_inputs_array = Array.from(document.getElementsByTagName('input'))
-        user_inputs_array.forEach((element, index)=>{
-        user_sequence_map.set(index,element.value)
+function compareUserSequence(userInputSequence) {
+    console.log(userInputSequence)
+    // at first lets just use a mock sequence 
+    var sequence = [1,2,3,4,5]
+    var elementIndex = 0
+    const comparedInputSequence = userInputSequence.map((element, index) => {
+        elementIndex = sequence.indexOf(Number(element))
+        if (index === elementIndex) {
+            return 0
+        }
+        return -1
     })
-    return user_sequence_map
+    console.log(comparedInputSequence)
 }
