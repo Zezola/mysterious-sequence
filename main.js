@@ -66,11 +66,15 @@ function populateInputValuesIntoArray(rowId) {
 }
 
 function generateRandomSequence () {
-    const randomSequence = [0,0,0,0,0]
-    randomSequence.map(e => {
-        e = Math.floor(Math.random() * 10)
-    })
-    return randomSequence
+    let sequence = []
+    while (sequence.length <= 4) {
+        let randomNumber = Math.floor(Math.random() * 10)
+        if (sequence.indexOf(randomNumber) === -1) {
+            sequence.push(randomNumber)
+        }
+    }
+    alert(sequence)
+    return sequence
 }
 
 
