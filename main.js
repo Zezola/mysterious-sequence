@@ -73,7 +73,6 @@ function generateRandomSequence () {
             sequence.push(randomNumber)
         }
     }
-    alert(sequence)
     return sequence
 }
 
