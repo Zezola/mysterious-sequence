@@ -1,3 +1,4 @@
+const generatedRandomSequence = generateRandomSequence();
 var buttons = document.getElementsByTagName("button")
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function (e) {
@@ -64,14 +65,19 @@ function populateInputValuesIntoArray(rowId) {
     return inputValues
 }
 
+function generateRandomSequence () {
+    const randomSequence = [0,0,0,0,0]
+    randomSequence.map(e => {
+        e = Math.floor(Math.random() * 10)
+    })
+    return randomSequence
+}
+
 
 function compareUserSequenceIntoResultsArray(userInputSequence) {
-    console.log(userInputSequence)
-    // at first lets just use a mock sequence 
-    var sequence = [1,2,3,4,5]
     var elementIndex = 0
     const resultsArray = userInputSequence.map((element, index) => {
-        elementIndex = sequence.indexOf(Number(element))
+        elementIndex = generatedRandomSequence.indexOf(Number(element))
         if (index === elementIndex) {
             return 1
         } else if (index !== elementIndex && elementIndex !== -1) {
