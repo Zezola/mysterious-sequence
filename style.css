@@ -7,10 +7,20 @@
 .guess-input {
     display: grid;
     grid-template-columns: 70px 70px 70px 70px 70px 70px;
-    margin: 10px;
-    height: 30px;
-    border-radius: 20px;
-    
+    border-radius: 20px;    
+}
+
+@media screen and (max-width: 800px) {
+    .guess-input {
+        display: grid;
+        width: 10px;
+        grid-template-columns: 30px 30px 30px 30px 30px 30px;
+        border-radius: 20px;
+    }
+
+    button {
+        font-size: 12px;
+    }
 }
 
 input {
